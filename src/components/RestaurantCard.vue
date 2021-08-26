@@ -67,16 +67,28 @@ export default {
   },
   methods: {
     addFavorite() {
-      this.restaurant.isFavorited = true;
+       this.restaurant = {
+        ...this.restaurant, 
+        isFavorited: true
+      }
     },
     deleteFavorite() {
-      this.restaurant.isFavorited = false;
+       this.restaurant = {
+        ...this.restaurant, 
+        isFavorited: false
+      }
     },
     addLike() {
-      this.restaurant.isLiked = true;
+       this.restaurant = {
+        ...this.restaurant, 
+        isLiked: true
+      }
     },
     deleteLike() {
-      this.restaurant.isLiked = false;
+       this.restaurant = {
+        ...this.restaurant, 
+        isLiked: false
+      }
     },
   },
 };
