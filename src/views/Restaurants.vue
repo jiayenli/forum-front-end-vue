@@ -13,6 +13,12 @@
     </div>
 
     <!-- 分頁標籤 RestaurantPagination -->
+    <RestaurantPagination 
+    :categoryId ="categoryId"
+    :currentPage ="currentPage"
+    :totalPage ="totalPage"
+    :previousPage="previousPage"
+    :nextPage="nextPage"/>
   </div>
 </template>
 
@@ -20,6 +26,7 @@
 import NavTabs from "./../components/NavTabs"
 import RestaurantCard from "./../components/RestaurantCard"
 import RestaurantsNavPills from "./../components/RestaurantsNavPills"
+import RestaurantPagination from "./../components/RestaurantPagination"
 
 const dummyData = {
     "restaurants": [
@@ -295,7 +302,8 @@ export default {
   components: {
     NavTabs,
     RestaurantCard,
-    RestaurantsNavPills
+    RestaurantsNavPills,
+    RestaurantPagination
   },
   data() {
     return {
@@ -310,13 +318,22 @@ export default {
   },
   methods: {
     fetchRestaurants () {
-      this.restaurants = dummyData.restaurants
-      this.categories = dummyData.categories
-      this.categoryId = dummyData.categoryId
-      this.currentPage = dummyData.page
-      this.totalPage = dummyData.totalPage
-      this.previousPage = dummyData.prev
-      this.nextPage = dummyData.next
+     const {
+         restaurants,
+         categories,
+         categoryId,
+         page,
+         totalPage,
+         prev,
+         next     
+         } = dummyData
+      this.restaurants = restaurants
+      this.categories = categories
+      this.categoryId = categoryId
+      this.currentPage = page
+      this.totalPage = totalPage
+      this.previousPage = prev
+      this.nextPage = next
     }
   },
   created(){
