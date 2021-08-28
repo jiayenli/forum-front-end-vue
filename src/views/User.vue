@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-4">
           <!-- 追蹤者頁 UserFollowingsCard -->
-          <UserFollowingsCard />
+          <UserFollowingsCard :Followings="Followings" />
 
           <br />
           <!-- 追隨者頁 UserFollowersCard -->
@@ -1333,7 +1333,7 @@ export default {
     };
   },
   methods: {
-    fetchProfileData(){
+    fetchUserData(){
       const { 
         id,
         name,
@@ -1364,7 +1364,7 @@ export default {
     }
   },
   created(){
-    this.fetchProfileData()
+    this.fetchUserData()
   }
 };
 </script>
