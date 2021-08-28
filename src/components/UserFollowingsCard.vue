@@ -19,9 +19,9 @@
 export default {
   props: {
     Followings: {
-      type: Object,
+      type: Array,
       required:true
-    }
+    },
   }
 }
 </script>

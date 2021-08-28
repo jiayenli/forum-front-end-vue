@@ -14,7 +14,7 @@
 
           <br />
           <!-- 追隨者頁 UserFollowersCard -->
-          <UserFollowersCard />
+          <UserFollowersCard :Followers="Followers" />
         </div>
         <div class="col-md-8">
           <!-- 已評論餐廳 UserCommentsCard -->
