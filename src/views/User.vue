@@ -18,11 +18,11 @@
         </div>
         <div class="col-md-8">
           <!-- 已評論餐廳 UserCommentsCard -->
-          <UserCommentsCard />
+          <UserCommentsCard  />
 
           <br />
           <!-- 收藏的餐廳 UserFavoritedRestaurantsCard -->
-          <UserFavoritedRestaurantsCard />
+          <UserFavoritedRestaurantsCard :FavoritedRestaurants="FavoritedRestaurants"/>
         </div>
       </div>
     </div>

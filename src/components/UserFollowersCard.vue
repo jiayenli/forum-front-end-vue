@@ -21,7 +21,7 @@ export default {
     Followers: {
       type: Array,
       required: true
-    },
+    }
   }
 }
 </script>
