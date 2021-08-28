@@ -3,7 +3,7 @@
     <div class="row no-gutters">
       <div class="col-md-4">
         <img
-          src="https://i.imgur.com/WMsHuNP.jpeg"
+          :src="profile.image"
           width="300px"
           height="300px"
         />

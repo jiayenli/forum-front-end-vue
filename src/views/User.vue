@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-8">
           <!-- 已評論餐廳 UserCommentsCard -->
-          <UserCommentsCard  />
+          <UserCommentsCard :Comments="Comments" />
 
           <br />
           <!-- 收藏的餐廳 UserFavoritedRestaurantsCard -->
@@ -1319,6 +1319,7 @@ export default {
         id: -1,
         name: "",
         email: "",
+        image: "",
         CommentsLength: 0,
         FavoritedRestaurantsLength: 0,
         FollowersLength: 0,
@@ -1338,6 +1339,7 @@ export default {
         id,
         name,
         email,
+        image,
         Comments,
         FavoritedRestaurants,
         Followers,
@@ -1349,6 +1351,7 @@ export default {
         id,
         name,
         email,
+        image,
         CommentsLength : Comments.length,
         FavoritedRestaurantsLength : FavoritedRestaurants.length,
         FollowersLength : Followers.length,
