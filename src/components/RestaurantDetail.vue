@@ -31,7 +31,7 @@
     </div>
     <div class="col-lg-8">
       <p>{{ restaurant.description }}</p>
-      <a class="btn btn-primary btn-border mr-2" href="#">Dashboard</a>
+      <router-link  :to="{name:'restaurant-dashboard',params:{id:restaurant.id}}" class="btn btn-primary btn-border mr-2">Dashboard</router-link>
 
       <button
         type="button"
@@ -71,25 +71,25 @@ export default {
     addFavorite() {
       this.restaurant = {
         ...this.restaurant,
-        isFavorited: true
+        isFavorited: true,
       };
     },
     deleteFavorite() {
       this.restaurant = {
         ...this.restaurant,
-        isFavorited: false
+        isFavorited: false,
       };
     },
     addLike() {
       this.restaurant = {
         ...this.restaurant,
-        isLiked: true
+        isLiked: true,
       };
     },
     deleteLike() {
       this.restaurant = {
         ...this.restaurant,
-        isLiked: false
+        isLiked: false,
       };
     },
   },
