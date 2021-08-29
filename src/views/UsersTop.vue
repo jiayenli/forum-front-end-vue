@@ -7,11 +7,7 @@
       <div v-for="user in users" class="col-3" :key="user.id">
         <router-link :to="{name:'user' , params: {id: user.id}}">
           <img
-            :src="
-              user.image
-                ? user.image
-                : 'http://via.placeholder.com/300x300?text=No+Image'
-            "
+            :src="user.image | emptyImage"
             width="140px"
             height="140px"
           />
@@ -45,6 +41,7 @@
 
 <script>
 import NavTabs from "./../components/NavTabs"
+import { emptyImageFilter } from './../utils/mixins'
 
 const dummyData = {
   users: [
@@ -441,9 +438,12 @@ const dummyData = {
 };
 
 export default {
+  name: "userTop",
+  mixins: [emptyImageFilter],
   components: {
     NavTabs
   },
+  
 
   data() {
     return {
