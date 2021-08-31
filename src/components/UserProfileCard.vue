@@ -30,7 +30,7 @@
           </ul>
           <p>
             <router-link
-              to="/users/1/edit"
+              :to= "{name: 'user-edit', params: {id: profile.id}}"
               v-if="currentUser.id === profile.id"
             >
               <button type="submit" class="btn btn-primary">edit</button>

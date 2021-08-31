@@ -1298,7 +1298,7 @@ const dummyUser = {
     id: 1,
     name: "管理者",
     email: "root@example.com",
-    image: "https://i.pravatar.cc/300",
+    image: "https://i.imgur.com/58ImzMM.png",
     isAdmin: true,
   },
   isAuthenticated: true,

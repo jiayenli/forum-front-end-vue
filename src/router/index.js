@@ -71,6 +71,12 @@ const routes = [
   },
 
   {
+    path: '/admin/users',
+    name: 'admin-users',
+    component: () => import('../views/AdminUsers.vue')
+  },
+
+  {
     path: '/admin/restaurants',
     name: 'admin-restaurants',
     component: () => import('../views/AdminRestaurants.vue')
@@ -92,6 +98,18 @@ const routes = [
     path: '/admin/restaurants/:id',
     name: 'admin-restaurant',
     component: () => import('../views/AdminRestaurant.vue')
+  },
+
+  {
+    path: '/admin/categories',
+    name: 'admin-categories',
+    component: () => import('../views/AdminCategories.vue')
+  },
+
+  {
+    path: '/users/:id/edit',
+    name: 'user-edit',
+    component: () => import('../views/UserEdit.vue')
   },
 
   {
