@@ -151,8 +151,8 @@ export default {
   data() {
     return {
       restaurant: {
-        ...this.initialRestaurant
-        },
+        ...this.initialRestaurant}
+        ,
       categories: [],
     };
   },
