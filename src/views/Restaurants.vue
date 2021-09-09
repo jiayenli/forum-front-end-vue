@@ -63,7 +63,6 @@ export default {
           page: queryPage,
           categoryId: queryCategoryId,
         });
-        console.log("response", response);
         const {
           restaurants,
           categories,
