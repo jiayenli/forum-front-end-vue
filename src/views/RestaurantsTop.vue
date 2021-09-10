@@ -55,6 +55,8 @@
 </template>
 <script>
 import NavTabs from "./../components/NavTabs";
+//import restaurantsAPI from "./../apis/restaurants";
+//import { Toast } from "./../utils/helpers";
 
 const dummyData = {
   restaurants: [
