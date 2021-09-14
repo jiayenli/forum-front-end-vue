@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-md-12 mb-3">
-      <h1>Judy Runte</h1>
+      <h1>{{restaurant.name}}</h1>
       <p class="badge badge-secondary mt-1 mb-3">
         {{ restaurant.categoryName ? restaurant.categoryName : "未分類" }}
       </p>
@@ -31,23 +31,42 @@
     </div>
     <div class="col-lg-8">
       <p>{{ restaurant.description }}</p>
-      <router-link  :to="{name:'restaurant-dashboard',params:{id:restaurant.id}}" class="btn btn-primary btn-border mr-2">Dashboard</router-link>
+      <router-link
+        :to="{ name: 'restaurant-dashboard', params: { id: restaurant.id } }"
+        class="btn btn-primary btn-border mr-2"
+        >Dashboard</router-link
+      >
 
       <button
         type="button"
         class="btn btn-danger btn-border mr-2"
-        v-if=" restaurant.isFavorited"
+        v-if="restaurant.isFavorited"
         @click.stop.prevent="deleteFavorite"
       >
         移除最愛
       </button>
-      <button type="button" class="btn btn-primary btn-border mr-2" v-else @click.stop.prevent="addFavorite">
+      <button
+        type="button"
+        class="btn btn-primary btn-border mr-2"
+        v-else
+        @click.stop.prevent="addFavorite"
+      >
         加到最愛
       </button>
-      <button type="button" class="btn btn-danger like mr-2" v-if=" restaurant.isLiked" @click.stop.prevent="deleteLike">
+      <button
+        type="button"
+        class="btn btn-danger like mr-2"
+        v-if="restaurant.isLiked"
+        @click.stop.prevent="deleteLike"
+      >
         Unlike
       </button>
-      <button type="button" class="btn btn-primary like mr-2" v-else  @click.stop.prevent="addLike">
+      <button
+        type="button"
+        class="btn btn-primary like mr-2"
+        v-else
+        @click.stop.prevent="addLike"
+      >
         Like
       </button>
     </div>
@@ -90,6 +109,15 @@ export default {
       this.restaurant = {
         ...this.restaurant,
         isLiked: false,
+      };
+    },
+  },
+
+  watch: {
+    initialRestaurant(newValue) {
+      this.restaurant = {
+        ...this.restaurant,
+        ...newValue,
       };
     },
   },
